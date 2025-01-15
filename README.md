@@ -15,6 +15,9 @@ This project demonstrates a simple web scraper built in Go using the [Colly](htt
 2. Install the Colly library:
    go get -u github.com/gocolly/colly
 
+3. Install the chromedp library:(Its Implemented to hendle JavaScript-rendered content)
+   go get -u github.com/chromedp/chromedp
+
 ## Usage
 
 1. Modify the `url` variable in the code to the target website you want to scrape.

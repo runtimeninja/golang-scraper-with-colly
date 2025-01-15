@@ -30,6 +30,12 @@ func scrapeWithColly(url string) {
 	//collector.OnResponse(func(response *colly.Response) {
 	//	fmt.Printf("Raw HTML:\n%s\n", string(response.Body))
 	//})
+
+	// added headers to behave like regular browser
+	collector.OnRequest(func(r *colly.Request) {
+		r.Headers.Set("Referer", url)
+		r.Headers.Set("Accept-Language", "en-US,en;q=0.9")
+	})
 	
 	// started scraping with colly
 	fmt.Printf("Starting to scrape with Colly: %s\n", url)
